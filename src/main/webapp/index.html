@@ -16,32 +16,7 @@ and open the template in the editor.
     
     <body>
         
-        <script>
-            var cumprimento;         
-            const date = Date.now();
-            var hora = date.getHours();
-            console.log("to executando");
-            console.log(hora);
-            switch (hora){
-                case hora > 12 && hora < 18:
-                     cumprimento = "Boa Tarde";
-                     document.getElementById("myText").innerHTML = cumprimento;
-
-                     break;
-                case hora < 12 && hora > 06:
-                     cumprimento = "Bom Dia"; 
-                     document.getElementById("myText").innerHTML = cumprimento;
-
-                     break;
-                 default:
-                     cumprimento = "Boa Noite"; 
-                     document.getElementById("myText").innerHTML = cumprimento;
-
-            }
-        
-        
-        </script>
-        <h1><span id="myText"></span></h1>
+        <header><center><h1><span id="myText"></span></h1></center></header>
         
         <h3>Preencha o formulário:</h3>
            <form action="sayhello.jsp" method="post">
@@ -52,6 +27,27 @@ and open the template in the editor.
            Nome: <input type="text" name="nome"/><br><br>
            <input type="submit" value="Cumprimentar"/>
         </form>
+        
+        <footer><center>Made in BR</center></footer>
+        
+        <script>
+            const date = new Date();
+            let hora = date.getHours();
+            switch (hora){
+                case hora > 12 && hora < 18:
+                     document.getElementById("myText").innerHTML = "Boa Tarde";
 
+                     break;
+                case hora < 12 && hora > 06:
+                     document.getElementById("myText").innerHTML = "Bom Dia";
+
+                     break;
+                 default:
+                     document.getElementById("myText").innerHTML = "Boa Noite";
+
+            }
+        
+        
+        </script>
     </body>
 </html>
